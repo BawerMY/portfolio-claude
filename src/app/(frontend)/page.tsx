@@ -158,8 +158,8 @@ export default async function HomePage() {
           kicker="07 / Contact"
           headlineParts={contact.headlineParts || []}
           socials={contact.socials || []}
-          footerLeft={settings.footerLeft}
-          footerRight={settings.footerRight}
+          footerLeft={settings.footerLeft || undefined}
+          footerRight={settings.footerRight || undefined}
         />
       </main>
 
