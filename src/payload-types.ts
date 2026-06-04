@@ -94,7 +94,7 @@ export interface Config {
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
-    defaultIDType: number;
+    defaultIDType: string;
   };
   fallbackLocale: null;
   globals: {
@@ -142,7 +142,7 @@ export interface UserAuthOperations {
  * via the `definition` "users".
  */
 export interface User {
-  id: number;
+  id: string;
   name?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -168,7 +168,7 @@ export interface User {
  * via the `definition` "media".
  */
 export interface Media {
-  id: number;
+  id: string;
   alt?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -187,7 +187,7 @@ export interface Media {
  * via the `definition` "projects".
  */
 export interface Project {
-  id: number;
+  id: string;
   title: string;
   slug: string;
   year: string;
@@ -210,7 +210,7 @@ export interface Project {
     paletteTo?: string | null;
   };
   href?: string | null;
-  coverImage?: (number | null) | Media;
+  coverImage?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
 }
@@ -219,7 +219,7 @@ export interface Project {
  * via the `definition` "experience".
  */
 export interface Experience {
-  id: number;
+  id: string;
   role: string;
   company: string;
   /**
@@ -250,7 +250,7 @@ export interface Experience {
  * via the `definition` "adventures".
  */
 export interface Adventure {
-  id: number;
+  id: string;
   kind: 'Hiking' | 'Cycling' | 'Urbex' | 'Other';
   /**
    * e.g. 2025 season
@@ -265,7 +265,7 @@ export interface Adventure {
         id?: string | null;
       }[]
     | null;
-  coverImage?: (number | null) | Media;
+  coverImage?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
 }
@@ -274,7 +274,7 @@ export interface Adventure {
  * via the `definition` "reads".
  */
 export interface Read {
-  id: number;
+  id: string;
   title: string;
   author: string;
   order?: number | null;
@@ -287,7 +287,7 @@ export interface Read {
    */
   status: string;
   statusVariant?: ('default' | 'now' | 'warm') | null;
-  coverImage?: (number | null) | Media;
+  coverImage?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
 }
@@ -296,7 +296,7 @@ export interface Read {
  * via the `definition` "plays".
  */
 export interface Play {
-  id: number;
+  id: string;
   title: string;
   studio: string;
   /**
@@ -318,7 +318,7 @@ export interface Play {
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
-  id: number;
+  id: string;
   key: string;
   data:
     | {
@@ -335,40 +335,40 @@ export interface PayloadKv {
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: number;
+  id: string;
   document?:
     | ({
         relationTo: 'users';
-        value: number | User;
+        value: string | User;
       } | null)
     | ({
         relationTo: 'media';
-        value: number | Media;
+        value: string | Media;
       } | null)
     | ({
         relationTo: 'projects';
-        value: number | Project;
+        value: string | Project;
       } | null)
     | ({
         relationTo: 'experience';
-        value: number | Experience;
+        value: string | Experience;
       } | null)
     | ({
         relationTo: 'adventures';
-        value: number | Adventure;
+        value: string | Adventure;
       } | null)
     | ({
         relationTo: 'reads';
-        value: number | Read;
+        value: string | Read;
       } | null)
     | ({
         relationTo: 'plays';
-        value: number | Play;
+        value: string | Play;
       } | null);
   globalSlug?: string | null;
   user: {
     relationTo: 'users';
-    value: number | User;
+    value: string | User;
   };
   updatedAt: string;
   createdAt: string;
@@ -378,10 +378,10 @@ export interface PayloadLockedDocument {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: number;
+  id: string;
   user: {
     relationTo: 'users';
-    value: number | User;
+    value: string | User;
   };
   key?: string | null;
   value?:
@@ -401,7 +401,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: number;
+  id: string;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;
@@ -591,7 +591,7 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  * via the `definition` "site-settings".
  */
 export interface SiteSetting {
-  id: number;
+  id: string;
   name: string;
   role?: string | null;
   pageTitle?: string | null;
@@ -606,7 +606,7 @@ export interface SiteSetting {
  * via the `definition` "hero".
  */
 export interface Hero {
-  id: number;
+  id: string;
   meta?:
     | {
         label: string;
@@ -648,7 +648,7 @@ export interface Hero {
  * via the `definition` "about".
  */
 export interface About {
-  id: number;
+  id: string;
   kicker?: string | null;
   headlineParts?:
     | {
@@ -693,7 +693,7 @@ export interface About {
  * via the `definition` "contact".
  */
 export interface Contact {
-  id: number;
+  id: string;
   /**
    * Last segment with linkHref becomes the underlined mailto link.
    */

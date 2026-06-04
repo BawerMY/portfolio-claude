@@ -14,7 +14,7 @@
     "seed:import": "cross-env NODE_OPTIONS=--no-deprecation tsx --env-file=.env src/import-db.ts"
   },
   "dependencies": {
-    "@payloadcms/db-sqlite": "^3.0.0",
+    "@payloadcms/db-mongodb": "^3.85.0",
     "@payloadcms/next": "^3.0.0",
     "@payloadcms/richtext-lexical": "^3.0.0",
     "@payloadcms/ui": "^3.0.0",

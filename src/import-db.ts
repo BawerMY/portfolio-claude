@@ -34,6 +34,23 @@ async function importDb() {
   }
 
   // ── collections (idempotent: only insert if empty) ──────────────
+  // Old (SQLite int) ID → new (Mongo ObjectId string) per collection.
+  const idMap: Record<string, Record<string | number, string>> = {}
+
+  const relationFields: Record<string, string[]> = {
+    media: [],
+    projects: ['coverImage'],
+    adventures: ['coverImage'],
+    reads: ['coverImage'],
+    experience: [],
+    plays: [],
+    users: [],
+  }
+  // Field → target collection slug it references.
+  const relationTarget: Record<string, string> = {
+    coverImage: 'media',
+  }
+
   for (const [slug, docs] of Object.entries(data.collections)) {
     const existing = await payload.find({ collection: slug as never, limit: 1 })
     if (existing.totalDocs > 0) {
@@ -42,18 +59,33 @@ async function importDb() {
     }
     const col = payload.config.collections.find((c) => c.slug === slug)
     const staticDir = col?.upload ? (col.upload as any).staticDir ?? slug : null
+    idMap[slug] ||= {}
 
     for (const doc of docs) {
-      if (staticDir && doc.filename) {
-        // re-upload the file that lives on disk next to the dump
-        const filePath = path.isAbsolute(staticDir)
-          ? path.join(staticDir, doc.filename)
-          : path.resolve(import.meta.dirname, '..', staticDir, doc.filename)
-        const { filename, ...rest } = doc
-        await payload.create({ collection: slug as never, data: rest as never, filePath })
-      } else {
-        await payload.create({ collection: slug as never, data: doc as never })
+      const oldId = doc.id
+      // Remap relationship fields using prior collections' idMap.
+      for (const field of relationFields[slug] || []) {
+        const target = relationTarget[field]
+        const oldRef = doc[field]
+        if (oldRef != null && target && idMap[target]?.[oldRef]) {
+          doc[field] = idMap[target][oldRef]
+        } else if (oldRef != null && (!target || !idMap[target]?.[oldRef])) {
+          doc[field] = null
+        }
       }
+      const { id: _drop, ...rest0 } = doc
+
+      let created: any
+      if (staticDir && rest0.filename) {
+        const filePath = path.isAbsolute(staticDir)
+          ? path.join(staticDir, rest0.filename)
+          : path.resolve(import.meta.dirname, '..', staticDir, rest0.filename)
+        const { filename, ...rest } = rest0
+        created = await payload.create({ collection: slug as never, data: rest as never, filePath })
+      } else {
+        created = await payload.create({ collection: slug as never, data: rest0 as never })
+      }
+      if (oldId != null) idMap[slug][oldId] = String(created.id)
     }
     console.log(`✓ ${slug} (${docs.length})`)
   }
