@@ -26,7 +26,7 @@ export function HeroCanvas({ mode = 'particles', className }: Props) {
     const t0 = performance.now()
     let raf = 0
 
-    function resize() {
+    const resize = () => {
       const parent = canvas.parentElement
       if (!parent) return
       dpr = Math.min(window.devicePixelRatio || 1, 2)
@@ -40,7 +40,7 @@ export function HeroCanvas({ mode = 'particles', className }: Props) {
       initMode()
     }
 
-    function initMode() {
+    const initMode = () => {
       if (mode === 'particles') {
         const count = Math.floor((W * H) / 9000)
         particles = Array.from({ length: count }, () => ({
@@ -57,7 +57,7 @@ export function HeroCanvas({ mode = 'particles', className }: Props) {
       }
     }
 
-    function drawParticles(now: number) {
+    const drawParticles = (now: number) => {
       ctx.clearRect(0, 0, W, H)
       const g = ctx.createRadialGradient(W * 0.3, H * 0.4, 50, W * 0.3, H * 0.4, Math.max(W, H) * 0.7)
       g.addColorStop(0, 'rgba(30, 60, 110, 0.35)')
@@ -82,7 +82,7 @@ export function HeroCanvas({ mode = 'particles', className }: Props) {
       }
     }
 
-    function drawAscii(now: number) {
+    const drawAscii = (now: number) => {
       ctx.clearRect(0, 0, W, H)
       const tt = (now - t0) / 1000
       const { cols, rows, cell } = asciiCells
@@ -104,7 +104,7 @@ export function HeroCanvas({ mode = 'particles', className }: Props) {
       }
     }
 
-    function drawGradient(now: number) {
+    const drawGradient = (now: number) => {
       const tt = (now - t0) / 1000
       ctx.clearRect(0, 0, W, H)
       ctx.fillStyle = '#0a1628'
@@ -125,7 +125,7 @@ export function HeroCanvas({ mode = 'particles', className }: Props) {
       ctx.globalCompositeOperation = 'source-over'
     }
 
-    function loop(now: number) {
+    const loop = (now: number) => {
       if (mode === 'particles') drawParticles(now)
       else if (mode === 'ascii') drawAscii(now)
       else drawGradient(now)
