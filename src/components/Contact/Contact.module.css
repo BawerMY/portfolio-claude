@@ -1,0 +1,116 @@
+.section {
+  padding: 120px var(--page-pad) 60px;
+  border-top: 1px solid var(--line);
+}
+
+.inner {
+  max-width: var(--max-content);
+  margin: 0 auto;
+}
+
+.kicker {
+  margin-bottom: 32px;
+  font-family: var(--mono-font);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+}
+
+.title {
+  font-family: var(--display-font);
+  font-weight: 300;
+  font-size: clamp(56px, 10vw, 140px);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  margin: 0 0 48px;
+}
+
+.title em {
+  color: var(--accent-warm);
+  font-style: italic;
+}
+
+.titleLink {
+  border-bottom: 1px solid var(--line-strong);
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.titleLink:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.socials {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  padding-top: 32px;
+  font-family: var(--mono-font);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--fg-dim);
+  transition: color 0.2s ease;
+}
+
+.socials a:hover {
+  color: var(--fg);
+}
+
+.socials a .arrow {
+  transition: transform 0.2s ease;
+}
+
+.socials a:hover .arrow {
+  transform: translate(2px, -2px);
+}
+
+.foot {
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono-font);
+  font-size: 11px;
+  color: var(--fg-mute);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1100px) {
+  .section {
+    padding-left: var(--page-pad-tablet);
+    padding-right: var(--page-pad-tablet);
+  }
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding: 80px var(--page-pad-mobile) 40px;
+  }
+  .title {
+    font-size: clamp(40px, 12vw, 64px);
+    margin-bottom: 32px;
+  }
+  .socials {
+    gap: 18px 22px;
+    padding-top: 24px;
+    font-size: 11px;
+  }
+  .foot {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    margin-top: 48px;
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,475 @@
+{
+  "collections": {
+    "media": [
+      {
+        "alt": "we walking in the hills",
+        "filename": "asdf.jpg",
+        "focalX": 50,
+        "focalY": 50
+      }
+    ],
+    "projects": [
+      {
+        "title": "IdealApp",
+        "slug": "ideal-app",
+        "year": "2025-2026",
+        "order": 0,
+        "stack": [
+          {
+            "id": "6a203c752939dd172df64f04",
+            "name": "Angular"
+          },
+          {
+            "id": "6a2044048c75e9134d65be72",
+            "name": "SCSS"
+          }
+        ],
+        "status": "Work",
+        "preview": {
+          "paletteFrom": "#1a3a6e",
+          "paletteTo": "#5a8fd6"
+        },
+        "href": "#",
+        "coverImage": null
+      },
+      {
+        "title": "Ermes",
+        "slug": "ermes",
+        "year": "2026",
+        "order": 1,
+        "stack": [
+          {
+            "id": "6a2043d08c75e9134d65be6c",
+            "name": "Flutter"
+          },
+          {
+            "id": "6a2043d48c75e9134d65be6e",
+            "name": "Stripe"
+          }
+        ],
+        "status": "Work",
+        "preview": {
+          "paletteFrom": "#1a3a6e",
+          "paletteTo": "#5a8fd6"
+        },
+        "href": "#",
+        "coverImage": null
+      },
+      {
+        "title": "NonTiSento",
+        "slug": "nontisento",
+        "year": "2026",
+        "order": 2,
+        "stack": [
+          {
+            "id": "6a2043de8c75e9134d65be70",
+            "name": "Vue JS"
+          },
+          {
+            "id": "6a20441a8c75e9134d65be76",
+            "name": "SCSS"
+          }
+        ],
+        "status": "Work",
+        "preview": {
+          "paletteFrom": "#1a3a6e",
+          "paletteTo": "#5a8fd6"
+        },
+        "href": "#",
+        "coverImage": null
+      }
+    ],
+    "experience": [
+      {
+        "role": "Frontend Developer",
+        "company": "Meyler Srl",
+        "period": "July 2025 — Present",
+        "location": "Torino",
+        "order": 0,
+        "summary": "Worked across giant e-commerce infrastructure projects, small marketing sites, BMS dashboards, and mobile apps.\nRange taught me to ship under different definitions of  \"done\" — from petabyte-scale uptime to a brochure site that just needs to look right on launch day.",
+        "stack": [
+          {
+            "id": "6a2041928c75e9134d65be5e",
+            "name": "Angular"
+          },
+          {
+            "id": "6a2041978c75e9134d65be60",
+            "name": "Vue JS"
+          },
+          {
+            "id": "6a2041aa8c75e9134d65be64",
+            "name": "Flutter"
+          },
+          {
+            "id": "6a2041a08c75e9134d65be62",
+            "name": "Payload CMS"
+          }
+        ],
+        "status": "current"
+      },
+      {
+        "role": "Waiter",
+        "company": "Snodo OGR",
+        "period": "July 2024 — Present",
+        "location": "Torino",
+        "order": 1,
+        "summary": "Worked the floor at OGR Snodo — a sprawling restaurant, bar, and lounge right next to the university where students come to study by day and party by night — while studying full-time.\nLong shifts on tight margins taught me discipline, how to read a room fast, and how to keep service running smoothly when five tables all need you at once.\nThese days I still pick up weekend shifts there for extra cash.",
+        "stack": [],
+        "status": "current"
+      }
+    ],
+    "adventures": [
+      {
+        "kind": "Hiking",
+        "season": "Spring 2026",
+        "title": "Via degli Dei",
+        "order": 0,
+        "stats": [
+          {
+            "id": "6a204a008c75e9134d65be78",
+            "label": "Distance",
+            "value": "130 km"
+          },
+          {
+            "id": "6a204a148c75e9134d65be7a",
+            "label": "Duration",
+            "value": "5 days"
+          },
+          {
+            "id": "6a204a298c75e9134d65be7c",
+            "label": "Journey",
+            "value": "From Bologna to Firenze"
+          }
+        ],
+        "coverImage": 1
+      }
+    ],
+    "reads": [
+      {
+        "title": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "order": 0,
+        "coverInitial": "LotR",
+        "status": "2025",
+        "statusVariant": "default",
+        "coverImage": null
+      },
+      {
+        "title": "The Stranger",
+        "author": "Albert Camus",
+        "order": 0,
+        "coverInitial": "S",
+        "status": "2026",
+        "statusVariant": "default",
+        "coverImage": null
+      },
+      {
+        "title": "Of Mice and Men",
+        "author": "John Steinbeck",
+        "order": 1,
+        "coverInitial": "M",
+        "status": "2026",
+        "statusVariant": "default",
+        "coverImage": null
+      },
+      {
+        "title": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "order": 2,
+        "coverInitial": "H",
+        "status": "2025",
+        "statusVariant": "warm",
+        "coverImage": null
+      },
+      {
+        "title": "Lord of the Flies",
+        "author": "William Golding",
+        "order": 3,
+        "coverInitial": "LF",
+        "status": "2023",
+        "statusVariant": "default",
+        "coverImage": null
+      },
+      {
+        "title": "Animal Farm",
+        "author": "George Orwell",
+        "order": 4,
+        "coverInitial": "AF",
+        "status": "2022",
+        "statusVariant": "warm",
+        "coverImage": null
+      }
+    ],
+    "plays": [
+      {
+        "title": "God of War",
+        "studio": "Sony 's Santa Monica Studio",
+        "playtime": null,
+        "order": 0,
+        "coverInitials": "GoW",
+        "status": "2023",
+        "statusVariant": "default"
+      },
+      {
+        "title": "Mount and Blade: Bannerlord",
+        "studio": "TaleWorlds Entertainment",
+        "playtime": "+100h",
+        "order": 0,
+        "coverInitials": "M&B",
+        "status": "2022 — Present",
+        "statusVariant": "now"
+      },
+      {
+        "title": "Witcher 3",
+        "studio": "CD PROJEKT RED",
+        "playtime": "80h",
+        "order": 1,
+        "coverInitials": "W",
+        "status": "2026",
+        "statusVariant": "warm"
+      },
+      {
+        "title": "Valorant",
+        "studio": "Riot Games",
+        "playtime": "+150h",
+        "order": 2,
+        "coverInitials": "V",
+        "status": "2021 — Present",
+        "statusVariant": "default"
+      },
+      {
+        "title": "Minecraft",
+        "studio": "Mojang",
+        "playtime": "∞",
+        "order": 4,
+        "coverInitials": "MC",
+        "status": "2012 — 2022",
+        "statusVariant": "default"
+      },
+      {
+        "title": "Batman: Arkham Asylum",
+        "studio": "Rocksteady Studios",
+        "playtime": "10h",
+        "order": 5,
+        "coverInitials": "B",
+        "status": "2024",
+        "statusVariant": "default"
+      },
+      {
+        "title": "Marvel's Spiderman",
+        "studio": "Insomniac Games",
+        "playtime": "30h",
+        "order": 5,
+        "coverInitials": "S",
+        "status": "2023",
+        "statusVariant": "default"
+      }
+    ]
+  },
+  "globals": {
+    "site-settings": {
+      "name": "Bawer Yavuzatmaca",
+      "role": "Frontend Developer",
+      "pageTitle": "Bawer Yavuzatmaca — Frontend Developer",
+      "pageDescription": "Frontend developer in Torino building thoughtful interfaces and chasing long roads.",
+      "footerLeft": "© 2026 Bawer Yavuzatmaca",
+      "footerRight": "Built with care · Torino"
+    },
+    "hero": {
+      "meta": [
+        {
+          "id": "6a20384392b97a2502633f10",
+          "label": "Frontend Developer",
+          "live": false
+        },
+        {
+          "id": "6a20384392b97a2502633f11",
+          "label": "Torino, IT",
+          "live": false
+        },
+        {
+          "id": "6a20384392b97a2502633f12",
+          "label": "Working at Meyler Srl",
+          "live": true
+        }
+      ],
+      "titleParts": [
+        {
+          "id": "6a20384392b97a2502633f13",
+          "text": "I build",
+          "accent": "none",
+          "breakAfter": false
+        },
+        {
+          "id": "6a20384392b97a2502633f14",
+          "text": "thoughtful",
+          "accent": "warm",
+          "breakAfter": true
+        },
+        {
+          "id": "6a20384392b97a2502633f15",
+          "text": "interfaces",
+          "accent": "none",
+          "breakAfter": false
+        },
+        {
+          "id": "6a20384392b97a2502633f16",
+          "text": "&",
+          "accent": "blue",
+          "breakAfter": false
+        },
+        {
+          "id": "6a20384392b97a2502633f17",
+          "text": "chase",
+          "accent": "none",
+          "breakAfter": true
+        },
+        {
+          "id": "6a20384392b97a2502633f18",
+          "text": "long roads.",
+          "accent": "none",
+          "breakAfter": false
+        }
+      ],
+      "subhead": "Hi, I'm Bawer — a frontend developer who treats every pixel like it matters. Off-screen you'll find me on a bike, in a forest, or in a half-abandoned building with a camera.",
+      "primaryCta": {
+        "label": "See projects",
+        "href": "#projects"
+      },
+      "secondaryCta": {
+        "label": "About me",
+        "href": "#about"
+      }
+    },
+    "about": {
+      "kicker": "04 / About",
+      "headlineParts": [
+        {
+          "id": "6a20384492b97a2502633f19",
+          "text": "The short",
+          "accent": "none",
+          "breakAfter": false
+        },
+        {
+          "id": "6a20384492b97a2502633f1a",
+          "text": "version.",
+          "accent": "warm",
+          "breakAfter": false
+        }
+      ],
+      "tagline": "Born curious, slightly obsessive about details, and chronically out the door.",
+      "paragraphs": [
+        {
+          "id": "6a20384492b97a2502633f1b",
+          "content": "I'm a frontend developer based in Brussels. I build for the web because the medium is {warm:generous} — you can ship something on a Tuesday and have a stranger tell you it changed their afternoon."
+        },
+        {
+          "id": "6a20384492b97a2502633f1c",
+          "content": "Right now I'm deepening into design systems, motion, and the messy edges of real user data. I want to be a {blue:full-stack craftsperson} — backend, infra, all of it — but I'm taking it one honest layer at a time."
+        },
+        {
+          "id": "6a20384492b97a2502633f1d",
+          "content": "When I'm not at a screen, I'm probably on two wheels, lost in a paperback, or climbing a fence I shouldn't be climbing to photograph the rust on the other side."
+        }
+      ],
+      "currently": [
+        {
+          "id": "6a20384492b97a2502633f1e",
+          "key": "Reading",
+          "value": "To Kill a Mockingbird"
+        },
+        {
+          "id": "6a20384492b97a2502633f1f",
+          "key": "Playing",
+          "value": "Mount And Blade: Bannerlord"
+        },
+        {
+          "id": "6a20384492b97a2502633f20",
+          "key": "Listening",
+          "value": "Nocturne"
+        },
+        {
+          "id": "6a20384492b97a2502633f21",
+          "key": "Building",
+          "value": "This Website"
+        }
+      ],
+      "toolkit": [
+        {
+          "id": "6a20384492b97a2502633f22",
+          "key": "Daily",
+          "value": "Claude Code · Brain"
+        },
+        {
+          "id": "6a20384492b97a2502633f24",
+          "key": "Learning",
+          "value": "AI Software Development · RAG Systems · Neo4j"
+        },
+        {
+          "id": "6a20384492b97a2502633f25",
+          "key": "Editor",
+          "value": "Visual Studio Code"
+        }
+      ]
+    },
+    "contact": {
+      "headlineParts": [
+        {
+          "id": "6a20384492b97a2502633f26",
+          "text": "Let's build",
+          "accent": "none",
+          "breakAfter": true,
+          "linkHref": null
+        },
+        {
+          "id": "6a20384492b97a2502633f27",
+          "text": "something",
+          "accent": "none",
+          "breakAfter": false,
+          "linkHref": null
+        },
+        {
+          "id": "6a20384492b97a2502633f28",
+          "text": "worth",
+          "accent": "warm",
+          "breakAfter": true,
+          "linkHref": null
+        },
+        {
+          "id": "6a20384492b97a2502633f29",
+          "text": "linking to.",
+          "accent": "none",
+          "breakAfter": false,
+          "linkHref": "mailto:bawermy123@gmail.com"
+        }
+      ],
+      "socials": [
+        {
+          "id": "6a20384492b97a2502633f2a",
+          "label": "Email",
+          "href": "mailto:bawermy123@gmail.com"
+        },
+        {
+          "id": "6a20384492b97a2502633f2b",
+          "label": "GitHub",
+          "href": "https://github.com/bawermy/"
+        },
+        {
+          "id": "6a20384492b97a2502633f2c",
+          "label": "LinkedIn",
+          "href": "https://www.strava.com/athletes/134623296"
+        },
+        {
+          "id": "6a20384492b97a2502633f2d",
+          "label": "Instagram",
+          "href": "https://www.instagram.com/bawer_my/"
+        },
+        {
+          "id": "6a20384492b97a2502633f2e",
+          "label": "Strava",
+          "href": "https://www.strava.com/athletes/134623296"
+        }
+      ]
+    }
+  }
+}

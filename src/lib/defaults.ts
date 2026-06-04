@@ -1,0 +1,316 @@
+import type { ProjectItem } from "@/components/Projects/ProjectsList";
+import type { ExperienceItem } from "@/components/Experience/Experience";
+import type { AdventureItem } from "@/components/Adventures/Adventures";
+import type { ReadItem, PlayItem } from "@/components/Logs/Logs";
+
+export const defaults = {
+  siteSettings: {
+    name: "Bawer Yavuzatmaca",
+    role: "Frontend Developer",
+    pageTitle: "Bawer Yavuzatmaca — Frontend Developer",
+    pageDescription:
+      "Frontend developer in Brussels building thoughtful interfaces and chasing long roads.",
+    footerLeft: "© 2026 Bawer Yavuzatmaca",
+    footerRight: "Built with care · Brussels",
+  },
+  hero: {
+    meta: [
+      { label: "Frontend Developer" },
+      { label: "Brussels, BE" },
+      { label: "Available for work", live: true },
+    ],
+    titleParts: [
+      { text: "I build", accent: "none" as const },
+      { text: "thoughtful", accent: "warm" as const, breakAfter: true },
+      { text: "interfaces", accent: "none" as const },
+      { text: "&", accent: "blue" as const },
+      { text: "chase", accent: "none" as const, breakAfter: true },
+      { text: "long roads.", accent: "none" as const },
+    ],
+    subhead:
+      "Hi, I'm Bawer — a frontend developer who treats every pixel like it matters. Off-screen you'll find me on a bike, in a forest, or in a half-abandoned building with a camera.",
+    primaryCta: { label: "See projects", href: "#projects" },
+    secondaryCta: { label: "About me", href: "#about" },
+  },
+  about: {
+    kicker: "04 / About",
+    headlineParts: [
+      { text: "The short", accent: "none" as const },
+      { text: "version.", accent: "warm" as const },
+    ],
+    tagline:
+      "Born curious, slightly obsessive about details, and chronically out the door.",
+    paragraphs: [
+      {
+        content:
+          "I'm a frontend developer based in Brussels. I build for the web because the medium is {warm:generous} — you can ship something on a Tuesday and have a stranger tell you it changed their afternoon.",
+      },
+      {
+        content:
+          "Right now I'm deepening into design systems, motion, and the messy edges of real user data. I want to be a {blue:full-stack craftsperson} — backend, infra, all of it — but I'm taking it one honest layer at a time.",
+      },
+      {
+        content:
+          "When I'm not at a screen, I'm probably on two wheels, lost in a paperback, or climbing a fence I shouldn't be climbing to photograph the rust on the other side.",
+      },
+    ],
+    currently: [
+      { key: "Reading", value: "A Gentleman in Moscow" },
+      { key: "Playing", value: "Elden Ring DLC" },
+      { key: "Listening", value: "Khruangbin · Live" },
+      { key: "Building", value: "Ride Notes v2" },
+    ],
+    toolkit: [
+      { key: "Daily", value: "React · TS · Tailwind" },
+      { key: "Often", value: "Next.js · Svelte · Astro" },
+      { key: "Learning", value: "Rust · Postgres · WebGPU" },
+      { key: "Editor", value: "Neovim, somehow" },
+    ],
+  },
+  contact: {
+    headlineParts: [
+      { text: "Let's build", accent: "none" as const, breakAfter: true },
+      { text: "something", accent: "none" as const },
+      { text: "worth", accent: "warm" as const, breakAfter: true },
+      {
+        text: "linking to.",
+        accent: "none" as const,
+        linkHref: "mailto:hello@bawer.dev",
+      },
+    ],
+    socials: [
+      { label: "Email", href: "mailto:hello@bawer.dev" },
+      { label: "GitHub", href: "#" },
+      { label: "LinkedIn", href: "#" },
+      { label: "Read.cv", href: "#" },
+      { label: "Strava", href: "#" },
+    ],
+  },
+  projects: [
+    {
+      id: "meridian",
+      title: "Meridian",
+      slug: "meridian",
+      year: "2026",
+      stack: ["React", "WebGL", "Tailwind"],
+      status: "Live",
+      href: "#",
+      paletteFrom: "#1a3a6e",
+      paletteTo: "#5a8fd6",
+    },
+    {
+      id: "ridenotes",
+      title: "Ride Notes",
+      slug: "ridenotes",
+      year: "2025",
+      stack: ["Next.js", "Mapbox", "Supabase"],
+      status: "Personal",
+      href: "#",
+      paletteFrom: "#1f3a52",
+      paletteTo: "#7da9e0",
+    },
+    {
+      id: "frame",
+      title: "Frame",
+      slug: "frame",
+      year: "2025",
+      stack: ["SvelteKit", "SQLite", "Cloudflare"],
+      status: "Open Source",
+      href: "#",
+      paletteFrom: "#243b66",
+      paletteTo: "#a4b4cd",
+    },
+    {
+      id: "dust",
+      title: "Dust & Daylight",
+      slug: "dust",
+      year: "2024",
+      stack: ["Astro", "MDX", "Three.js"],
+      status: "Photo Journal",
+      href: "#",
+      paletteFrom: "#3a2f4a",
+      paletteTo: "#d4a574",
+    },
+    {
+      id: "atlas",
+      title: "Atlas",
+      slug: "atlas",
+      year: "2024",
+      stack: ["Vue 3", "D3", "Pinia"],
+      status: "Client",
+      href: "#",
+      paletteFrom: "#1a2f4a",
+      paletteTo: "#6c5ce7",
+    },
+    {
+      id: "quiet",
+      title: "Quiet Hours",
+      slug: "quiet",
+      year: "2023",
+      stack: ["Vanilla JS", "Web Audio", "Canvas"],
+      status: "Experiment",
+      href: "#",
+      paletteFrom: "#142838",
+      paletteTo: "#5fbf7f",
+    },
+  ] satisfies ProjectItem[],
+  experience: [
+    {
+      id: "e1",
+      role: "Senior Frontend Developer",
+      company: "Atelier Studio",
+      period: "2024 — Present",
+      location: "Brussels · Hybrid",
+      summary:
+        "Lead the design-system rewrite across three product surfaces. Ship motion-heavy marketing pages and an internal CMS-driven editor toolkit.",
+      stack: ["React", "TypeScript", "Next.js", "Framer Motion"],
+      status: "current",
+    },
+    {
+      id: "e2",
+      role: "Frontend Developer",
+      company: "Northbound Labs",
+      period: "2022 — 2024",
+      location: "Remote",
+      summary:
+        "Built data-dense dashboards for a fleet-telemetry product. Owned the migration from CRA to Next.js App Router and cut TTI by 60%.",
+      stack: ["React", "Next.js", "D3", "GraphQL"],
+      status: "past",
+    },
+    {
+      id: "e3",
+      role: "UI Engineer (Contract)",
+      company: "Maison & Co.",
+      period: "2021 — 2022",
+      location: "Paris",
+      summary:
+        "Shipped a Three.js product configurator and a Stripe-backed checkout for a small luxury goods brand. Wrote the front-of-house design tokens still in use today.",
+      stack: ["React", "Three.js", "Stripe", "Tailwind"],
+      status: "past",
+    },
+    {
+      id: "e4",
+      role: "Junior Web Developer",
+      company: "Freelance",
+      period: "2019 — 2021",
+      location: "Brussels",
+      summary:
+        "Built marketing sites and small e-commerce stores for local clients. Learned how to ship under deadline and how to say no to scope creep.",
+      stack: ["Vue", "Nuxt", "Sanity", "Vanilla CSS"],
+      status: "past",
+    },
+  ] satisfies ExperienceItem[],
+  adventures: [
+    {
+      id: "vosges",
+      kind: "Hiking",
+      season: "2025 season",
+      title: "Vosges & Ardennes",
+      stats: [
+        { label: "Trails", value: "14" },
+        { label: "Elevation", value: "9.2k m" },
+        { label: "Longest", value: "32 km" },
+      ],
+    },
+    {
+      id: "koln",
+      kind: "Cycling",
+      season: "2025 season",
+      title: "Brussels → Köln",
+      stats: [
+        { label: "Distance", value: "4,820 km" },
+        { label: "Climbed", value: "34.5k m" },
+        { label: "Big day", value: "168 km" },
+      ],
+    },
+  ] satisfies AdventureItem[],
+  reads: [
+    {
+      id: "r1",
+      title: "A Gentleman in Moscow",
+      author: "Amor Towles",
+      coverInitial: "G",
+      status: "Now",
+      statusVariant: "now",
+    },
+    {
+      id: "r2",
+      title: "Piranesi",
+      author: "Susanna Clarke",
+      coverInitial: "P",
+      status: "Just finished",
+      statusVariant: "default",
+    },
+    {
+      id: "r3",
+      title: "The Dispossessed",
+      author: "Ursula K. Le Guin",
+      coverInitial: "D",
+      status: "2025",
+      statusVariant: "default",
+    },
+    {
+      id: "r4",
+      title: "Bluets",
+      author: "Maggie Nelson",
+      coverInitial: "B",
+      status: "Reread",
+      statusVariant: "warm",
+    },
+    {
+      id: "r5",
+      title: "Stoner",
+      author: "John Williams",
+      coverInitial: "S",
+      status: "2025",
+      statusVariant: "default",
+    },
+  ] satisfies ReadItem[],
+  plays: [
+    {
+      id: "p1",
+      title: "Elden Ring — Shadow of the Erdtree",
+      studio: "FromSoftware",
+      playtime: "84h",
+      coverInitials: "ER",
+      status: "Now",
+      statusVariant: "now",
+    },
+    {
+      id: "p2",
+      title: "Outer Wilds",
+      studio: "Mobius Digital",
+      playtime: "finished",
+      coverInitials: "OW",
+      status: "All-time",
+      statusVariant: "warm",
+    },
+    {
+      id: "p3",
+      title: "Death Stranding",
+      studio: "Kojima Productions",
+      playtime: null,
+      coverInitials: "DR",
+      status: "2025",
+      statusVariant: "default",
+    },
+    {
+      id: "p4",
+      title: "Red Dead Redemption 2",
+      studio: "Rockstar",
+      playtime: "slow replay",
+      coverInitials: "RD",
+      status: "On-and-off",
+      statusVariant: "default",
+    },
+    {
+      id: "p5",
+      title: "Celeste",
+      studio: "Maddy Makes Games",
+      playtime: "B-sides",
+      coverInitials: "CL",
+      status: "2024",
+      statusVariant: "default",
+    },
+  ] satisfies PlayItem[],
+};
