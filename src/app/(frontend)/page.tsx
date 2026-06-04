@@ -3,6 +3,7 @@ import { Hero } from '@/components/Hero/Hero'
 import { Projects } from '@/components/Projects/Projects'
 import { Experience } from '@/components/Experience/Experience'
 import { About } from '@/components/About/About'
+import { Skills } from '@/components/Skills/Skills'
 import { Adventures } from '@/components/Adventures/Adventures'
 import { Logs } from '@/components/Logs/Logs'
 import { Contact } from '@/components/Contact/Contact'
@@ -74,6 +75,19 @@ export default async function HomePage() {
         paletteTo: p.preview?.paletteTo || '#5a8fd6',
       }))
     : defaults.projects
+
+  const skills = content.skills?.groups?.length
+    ? content.skills.groups.map((g, i) => ({
+        id: String(g.id ?? i),
+        titlePre: g.titlePre,
+        titleEm: g.titleEm || undefined,
+        titlePost: g.titlePost || undefined,
+        chips: (g.chips || []).map((c) => ({
+          name: c.name,
+          variant: (c.variant as 'default' | 'core' | 'learning' | null) || 'default',
+        })),
+      }))
+    : defaults.skills
 
   const experience = content.experience.length
     ? content.experience.map((e) => ({
@@ -159,8 +173,15 @@ export default async function HomePage() {
           pastLabel={labels.experience.past}
         />
 
+        <Skills
+          num={labels.skills.num}
+          headlineParts={labels.skills.headlineParts}
+          tagline={labels.skills.tagline}
+          groups={skills}
+        />
+
         <About
-          num={about.kicker || labels.contact.num}
+          num={labels.about.num}
           headlineParts={about.headlineParts || []}
           tagline={about.tagline || undefined}
           paragraphs={about.paragraphs || []}

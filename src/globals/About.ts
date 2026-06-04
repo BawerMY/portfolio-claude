@@ -4,7 +4,7 @@ export const About: GlobalConfig = {
   slug: 'about',
   access: { read: () => true },
   fields: [
-    { name: 'kicker', type: 'text', localized: true, defaultValue: '04 / About' },
+    { name: 'kicker', type: 'text', localized: true, defaultValue: '05 / About' },
     {
       name: 'headlineParts',
       type: 'array',

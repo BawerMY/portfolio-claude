@@ -2,6 +2,7 @@ import type { ProjectItem } from '@/components/Projects/ProjectsList'
 import type { ExperienceItem } from '@/components/Experience/Experience'
 import type { AdventureItem } from '@/components/Adventures/Adventures'
 import type { ReadItem, PlayItem } from '@/components/Logs/Logs'
+import type { SkillGroup } from '@/components/Skills/Skills'
 import type { Locale } from '@/lib/i18n'
 
 type DefaultsShape = {
@@ -39,10 +40,103 @@ type DefaultsShape = {
   }
   projects: ProjectItem[]
   experience: ExperienceItem[]
+  skills: SkillGroup[]
   adventures: AdventureItem[]
   reads: ReadItem[]
   plays: PlayItem[]
 }
+
+const skillsEn: SkillGroup[] = [
+  {
+    id: 'languages',
+    titlePre: 'Languages',
+    chips: [
+      { name: 'TypeScript', variant: 'core' },
+      { name: 'JavaScript', variant: 'core' },
+      { name: 'HTML' },
+      { name: 'CSS' },
+      { name: 'Python' },
+    ],
+  },
+  {
+    id: 'frameworks',
+    titlePre: 'Frameworks & ',
+    titleEm: 'UI',
+    chips: [
+      { name: 'Angular', variant: 'core' },
+      { name: 'Vue', variant: 'core' },
+      { name: 'Flutter', variant: 'core' },
+      { name: 'Tailwind', variant: 'core' },
+      { name: 'SCSS', variant: 'core' },
+    ],
+  },
+  {
+    id: 'tools',
+    titlePre: 'Tools & ',
+    titleEm: 'AI',
+    chips: [
+      { name: 'Git', variant: 'core' },
+      { name: 'VS Code', variant: 'core' },
+      { name: 'Claude Code', variant: 'core' },
+      { name: 'Claude Design', variant: 'core' },
+    ],
+  },
+  {
+    id: 'backend',
+    titlePre: 'Backend & ',
+    titleEm: 'services',
+    chips: [
+      { name: 'Payload CMS', variant: 'core' },
+      { name: 'Stripe', variant: 'core' },
+    ],
+  },
+]
+
+const skillsIt: SkillGroup[] = [
+  {
+    id: 'languages',
+    titlePre: 'Linguaggi',
+    chips: [
+      { name: 'TypeScript', variant: 'core' },
+      { name: 'JavaScript', variant: 'core' },
+      { name: 'HTML' },
+      { name: 'CSS' },
+      { name: 'Python' },
+    ],
+  },
+  {
+    id: 'frameworks',
+    titlePre: 'Framework & ',
+    titleEm: 'UI',
+    chips: [
+      { name: 'Angular', variant: 'core' },
+      { name: 'Vue', variant: 'core' },
+      { name: 'Flutter', variant: 'core' },
+      { name: 'Tailwind', variant: 'core' },
+      { name: 'SCSS', variant: 'core' },
+    ],
+  },
+  {
+    id: 'tools',
+    titlePre: 'Strumenti & ',
+    titleEm: 'AI',
+    chips: [
+      { name: 'Git', variant: 'core' },
+      { name: 'VS Code', variant: 'core' },
+      { name: 'Claude Code', variant: 'core' },
+      { name: 'Claude Design', variant: 'core' },
+    ],
+  },
+  {
+    id: 'backend',
+    titlePre: 'Backend & ',
+    titleEm: 'servizi',
+    chips: [
+      { name: 'Payload CMS', variant: 'core' },
+      { name: 'Stripe', variant: 'core' },
+    ],
+  },
+]
 
 const en: DefaultsShape = {
   siteSettings: {
@@ -74,7 +168,7 @@ const en: DefaultsShape = {
     secondaryCta: { label: 'About me', href: '#about' },
   },
   about: {
-    kicker: '04 / About',
+    kicker: '05 / About',
     headlineParts: [
       { text: 'The short', accent: 'none' },
       { text: 'version.', accent: 'warm' },
@@ -237,6 +331,7 @@ const en: DefaultsShape = {
       status: 'past',
     },
   ],
+  skills: skillsEn,
   adventures: [
     {
       id: 'vosges',
@@ -382,7 +477,7 @@ const it: DefaultsShape = {
     secondaryCta: { label: 'Chi sono', href: '#about' },
   },
   about: {
-    kicker: '04 / Chi sono',
+    kicker: '05 / Chi sono',
     headlineParts: [
       { text: 'La versione', accent: 'none' },
       { text: 'breve.', accent: 'warm' },
@@ -545,6 +640,7 @@ const it: DefaultsShape = {
       status: 'past',
     },
   ],
+  skills: skillsIt,
   adventures: [
     {
       id: 'vosges',

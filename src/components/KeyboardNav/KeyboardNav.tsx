@@ -6,10 +6,11 @@ const SECTION_MAP: Record<string, string> = {
   '1': 'home',
   '2': 'projects',
   '3': 'experience',
-  '4': 'about',
-  '5': 'adventures',
-  '6': 'logs',
-  '7': 'contact',
+  '4': 'skills',
+  '5': 'about',
+  '6': 'adventures',
+  '7': 'logs',
+  '8': 'contact',
 }
 
 export function KeyboardNav() {

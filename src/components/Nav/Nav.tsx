@@ -20,7 +20,7 @@ export function Nav({ fullName, locale, labels }: Props) {
     { id: 'home', num: '01', label: labels.home },
     { id: 'projects', num: '02', label: labels.projects },
     { id: 'experience', num: '03', label: labels.experience },
-    { id: 'about', num: '04', label: labels.about },
+    { id: 'about', num: '05', label: labels.about },
   ]
 
   return (

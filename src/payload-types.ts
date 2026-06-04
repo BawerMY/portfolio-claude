@@ -101,12 +101,14 @@ export interface Config {
     'site-settings': SiteSetting;
     hero: Hero;
     about: About;
+    skills: Skill;
     contact: Contact;
   };
   globalsSelect: {
     'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
     hero: HeroSelect<false> | HeroSelect<true>;
     about: AboutSelect<false> | AboutSelect<true>;
+    skills: SkillsSelect<false> | SkillsSelect<true>;
     contact: ContactSelect<false> | ContactSelect<true>;
   };
   locale: 'en' | 'it';
@@ -690,6 +692,36 @@ export interface About {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "skills".
+ */
+export interface Skill {
+  id: string;
+  /**
+   * Skill groups rendered in a 2-column grid. Use titleEm for the italic amber portion of the heading.
+   */
+  groups?:
+    | {
+        titlePre: string;
+        /**
+         * Italic amber word, e.g. "UI" in "Frameworks & UI"
+         */
+        titleEm?: string | null;
+        titlePost?: string | null;
+        chips?:
+          | {
+              name: string;
+              variant?: ('default' | 'core' | 'learning') | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "contact".
  */
 export interface Contact {
@@ -804,6 +836,30 @@ export interface AboutSelect<T extends boolean = true> {
     | {
         key?: T;
         value?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "skills_select".
+ */
+export interface SkillsSelect<T extends boolean = true> {
+  groups?:
+    | T
+    | {
+        titlePre?: T;
+        titleEm?: T;
+        titlePost?: T;
+        chips?:
+          | T
+          | {
+              name?: T;
+              variant?: T;
+              id?: T;
+            };
         id?: T;
       };
   updatedAt?: T;

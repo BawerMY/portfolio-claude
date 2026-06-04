@@ -16,6 +16,7 @@ import { Plays } from './collections/Plays'
 import { SiteSettings } from './globals/SiteSettings'
 import { Hero } from './globals/Hero'
 import { About } from './globals/About'
+import { Skills } from './globals/Skills'
 import { Contact } from './globals/Contact'
 
 const filename = fileURLToPath(import.meta.url)
@@ -29,7 +30,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Projects, Experience, Adventures, Reads, Plays],
-  globals: [SiteSettings, Hero, About, Contact],
+  globals: [SiteSettings, Hero, About, Skills, Contact],
   localization: {
     locales: [
       { code: 'en', label: 'English' },

@@ -5,11 +5,22 @@ import type { Locale } from '@/lib/i18n'
 export async function getContent(locale: Locale = 'en') {
   const payload = await getPayload({ config })
 
-  const [siteSettings, hero, about, contact, projects, experience, adventures, reads, plays] =
-    await Promise.all([
+  const [
+    siteSettings,
+    hero,
+    about,
+    skills,
+    contact,
+    projects,
+    experience,
+    adventures,
+    reads,
+    plays,
+  ] = await Promise.all([
       payload.findGlobal({ slug: 'site-settings', locale }).catch(() => null),
       payload.findGlobal({ slug: 'hero', locale }).catch(() => null),
       payload.findGlobal({ slug: 'about', locale }).catch(() => null),
+      payload.findGlobal({ slug: 'skills', locale }).catch(() => null),
       payload.findGlobal({ slug: 'contact', locale }).catch(() => null),
       payload
         .find({ collection: 'projects', sort: 'order', limit: 50, locale })
@@ -33,7 +44,18 @@ export async function getContent(locale: Locale = 'en') {
         .catch(() => []),
     ])
 
-  return { siteSettings, hero, about, contact, projects, experience, adventures, reads, plays }
+  return {
+    siteSettings,
+    hero,
+    about,
+    skills,
+    contact,
+    projects,
+    experience,
+    adventures,
+    reads,
+    plays,
+  }
 }
 
 export type SiteContent = Awaited<ReturnType<typeof getContent>>

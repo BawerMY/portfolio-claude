@@ -25,9 +25,15 @@ type Labels = {
     tagline: string
   }
   about: {
+    num: string
     currently: string
     now: string
     toolkit: string
+  }
+  skills: {
+    num: string
+    headlineParts: HeadlinePart[]
+    tagline: string
   }
   adventures: {
     num: string
@@ -79,9 +85,19 @@ const all: Record<Locale, Labels> = {
       tagline:
         "Hover any project to peek at it. Most are personal — a few are client work I'm allowed to talk about.",
     },
-    about: { currently: 'Currently', now: 'Now', toolkit: 'Toolkit' },
+    about: { num: '05 / About', currently: 'Currently', now: 'Now', toolkit: 'Toolkit' },
+    skills: {
+      num: '04 / Skills',
+      headlineParts: [
+        { text: 'The' },
+        { text: 'toolkit', accent: 'warm' },
+        { text: ',', breakAfter: true },
+        { text: 'in full.' },
+      ],
+      tagline: 'What I use to build, every day.',
+    },
     adventures: {
-      num: '05 / Adventures',
+      num: '06 / Adventures',
       headlineParts: [
         { text: 'Where the' },
         { text: 'screen', accent: 'warm' },
@@ -91,7 +107,7 @@ const all: Record<Locale, Labels> = {
         'I keep two ongoing logs: distance covered on the bike, and elevation earned on foot. The numbers are honest, even the embarrassing ones.',
     },
     logs: {
-      num: '06 / Logs',
+      num: '07 / Logs',
       headlineParts: [
         { text: "What I'm" },
         { text: 'reading', accent: 'warm' },
@@ -105,7 +121,7 @@ const all: Record<Locale, Labels> = {
       readingLog: { prefix: 'Reading ', em: 'log' },
       gamingLog: { prefix: 'Gaming ', em: 'log' },
     },
-    contact: { num: '07 / Contact' },
+    contact: { num: '08 / Contact' },
   },
   it: {
     nav: {
@@ -142,9 +158,19 @@ const all: Record<Locale, Labels> = {
       tagline:
         'Passa sopra un progetto per dare un’occhiata. Quasi tutti personali — alcuni lavori per clienti di cui posso parlare.',
     },
-    about: { currently: 'Adesso', now: 'Ora', toolkit: 'Strumenti' },
+    about: { num: '05 / Chi sono', currently: 'Adesso', now: 'Ora', toolkit: 'Strumenti' },
+    skills: {
+      num: '04 / Competenze',
+      headlineParts: [
+        { text: 'Lo' },
+        { text: 'strumentario', accent: 'warm' },
+        { text: ',', breakAfter: true },
+        { text: 'per intero.' },
+      ],
+      tagline: 'Quello che uso per costruire, ogni giorno.',
+    },
     adventures: {
-      num: '05 / Avventure',
+      num: '06 / Avventure',
       headlineParts: [
         { text: 'Dove finisce' },
         { text: 'lo schermo', accent: 'warm' },
@@ -154,7 +180,7 @@ const all: Record<Locale, Labels> = {
         'Tengo due diari paralleli: chilometri in bici e dislivello a piedi. I numeri sono onesti, anche quelli imbarazzanti.',
     },
     logs: {
-      num: '06 / Diari',
+      num: '07 / Diari',
       headlineParts: [
         { text: 'Cosa sto' },
         { text: 'leggendo', accent: 'warm' },
@@ -168,7 +194,7 @@ const all: Record<Locale, Labels> = {
       readingLog: { prefix: 'Diario di ', em: 'lettura' },
       gamingLog: { prefix: 'Diario di ', em: 'gioco' },
     },
-    contact: { num: '07 / Contatti' },
+    contact: { num: '08 / Contatti' },
   },
 }
 
