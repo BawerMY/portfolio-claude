@@ -4,11 +4,12 @@ export const About: GlobalConfig = {
   slug: 'about',
   access: { read: () => true },
   fields: [
-    { name: 'kicker', type: 'text', defaultValue: '04 / About' },
+    { name: 'kicker', type: 'text', localized: true, defaultValue: '04 / About' },
     {
       name: 'headlineParts',
       type: 'array',
       minRows: 1,
+      localized: true,
       fields: [
         { name: 'text', type: 'text', required: true },
         {
@@ -24,11 +25,17 @@ export const About: GlobalConfig = {
         { name: 'breakAfter', type: 'checkbox', defaultValue: false },
       ],
     },
-    { name: 'tagline', type: 'textarea', admin: { description: 'Short paragraph under headline' } },
+    {
+      name: 'tagline',
+      type: 'textarea',
+      localized: true,
+      admin: { description: 'Short paragraph under headline' },
+    },
     {
       name: 'paragraphs',
       type: 'array',
       minRows: 1,
+      localized: true,
       admin: { description: 'Long-form prose. Use {warm:text} or {blue:text} inline for accents.' },
       fields: [{ name: 'content', type: 'textarea', required: true }],
     },
@@ -36,6 +43,7 @@ export const About: GlobalConfig = {
       name: 'currently',
       type: 'array',
       minRows: 1,
+      localized: true,
       fields: [
         { name: 'key', type: 'text', required: true },
         { name: 'value', type: 'text', required: true },
@@ -45,6 +53,7 @@ export const About: GlobalConfig = {
       name: 'toolkit',
       type: 'array',
       minRows: 1,
+      localized: true,
       fields: [
         { name: 'key', type: 'text', required: true },
         { name: 'value', type: 'text', required: true },

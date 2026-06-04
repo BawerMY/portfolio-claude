@@ -8,6 +8,7 @@ export const Contact: GlobalConfig = {
       name: 'headlineParts',
       type: 'array',
       minRows: 1,
+      localized: true,
       admin: { description: 'Last segment with linkHref becomes the underlined mailto link.' },
       fields: [
         { name: 'text', type: 'text', required: true },
@@ -22,13 +23,18 @@ export const Contact: GlobalConfig = {
           ],
         },
         { name: 'breakAfter', type: 'checkbox', defaultValue: false },
-        { name: 'linkHref', type: 'text', admin: { description: 'If set, this segment renders as a link' } },
+        {
+          name: 'linkHref',
+          type: 'text',
+          admin: { description: 'If set, this segment renders as a link' },
+        },
       ],
     },
     {
       name: 'socials',
       type: 'array',
       minRows: 1,
+      localized: true,
       fields: [
         { name: 'label', type: 'text', required: true },
         { name: 'href', type: 'text', required: true },

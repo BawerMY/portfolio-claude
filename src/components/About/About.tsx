@@ -10,6 +10,9 @@ type Props = {
   paragraphs: { content: string }[]
   currently: KV[]
   toolkit: KV[]
+  currentlyLabel?: string
+  nowLabel?: string
+  toolkitLabel?: string
 }
 
 // Renders {warm:text} and {blue:text} inline markers from raw paragraph copy.
@@ -41,7 +44,17 @@ function renderProse(text: string) {
   return parts
 }
 
-export function About({ num, headlineParts, tagline, paragraphs, currently, toolkit }: Props) {
+export function About({
+  num,
+  headlineParts,
+  tagline,
+  paragraphs,
+  currently,
+  toolkit,
+  currentlyLabel = 'Currently',
+  nowLabel = 'Now',
+  toolkitLabel = 'Toolkit',
+}: Props) {
   return (
     <section className={sectionStyles.section} id="about">
       <div className={sectionStyles.inner}>
@@ -57,8 +70,8 @@ export function About({ num, headlineParts, tagline, paragraphs, currently, tool
           <aside className={styles.side}>
             <div className={styles.card}>
               <div className={styles.cardLabel}>
-                <span>Currently</span>
-                <span className={styles.cardLive}>● Now</span>
+                <span>{currentlyLabel}</span>
+                <span className={styles.cardLive}>● {nowLabel}</span>
               </div>
               {currently.map((row, i) => (
                 <div key={i} className={styles.statRow}>
@@ -70,7 +83,7 @@ export function About({ num, headlineParts, tagline, paragraphs, currently, tool
 
             <div className={styles.card}>
               <div className={styles.cardLabel}>
-                <span>Toolkit</span>
+                <span>{toolkitLabel}</span>
               </div>
               {toolkit.map((row, i) => (
                 <div key={i} className={styles.statRow}>

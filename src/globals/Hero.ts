@@ -9,6 +9,7 @@ export const Hero: GlobalConfig = {
       type: 'array',
       minRows: 1,
       maxRows: 4,
+      localized: true,
       defaultValue: [
         { label: 'Frontend Developer' },
         { label: 'Brussels, BE' },
@@ -16,14 +17,23 @@ export const Hero: GlobalConfig = {
       ],
       fields: [
         { name: 'label', type: 'text', required: true },
-        { name: 'live', type: 'checkbox', defaultValue: false, admin: { description: 'Show pulsing green dot' } },
+        {
+          name: 'live',
+          type: 'checkbox',
+          defaultValue: false,
+          admin: { description: 'Show pulsing green dot' },
+        },
       ],
     },
     {
       name: 'titleParts',
       type: 'array',
       minRows: 1,
-      admin: { description: 'Title segments. Use accent=warm for amber italic, accent=blue for steel-blue italic.' },
+      localized: true,
+      admin: {
+        description:
+          'Title segments. Use accent=warm for amber italic, accent=blue for steel-blue italic.',
+      },
       fields: [
         { name: 'text', type: 'text', required: true },
         {
@@ -36,15 +46,20 @@ export const Hero: GlobalConfig = {
             { label: 'Blue (steel italic)', value: 'blue' },
           ],
         },
-        { name: 'breakAfter', type: 'checkbox', defaultValue: false, admin: { description: 'Line break after this segment' } },
+        {
+          name: 'breakAfter',
+          type: 'checkbox',
+          defaultValue: false,
+          admin: { description: 'Line break after this segment' },
+        },
       ],
     },
-    { name: 'subhead', type: 'textarea' },
+    { name: 'subhead', type: 'textarea', localized: true },
     {
       name: 'primaryCta',
       type: 'group',
       fields: [
-        { name: 'label', type: 'text', defaultValue: 'See projects' },
+        { name: 'label', type: 'text', localized: true, defaultValue: 'See projects' },
         { name: 'href', type: 'text', defaultValue: '#projects' },
       ],
     },
@@ -52,7 +67,7 @@ export const Hero: GlobalConfig = {
       name: 'secondaryCta',
       type: 'group',
       fields: [
-        { name: 'label', type: 'text', defaultValue: 'About me' },
+        { name: 'label', type: 'text', localized: true, defaultValue: 'About me' },
         { name: 'href', type: 'text', defaultValue: '#about' },
       ],
     },

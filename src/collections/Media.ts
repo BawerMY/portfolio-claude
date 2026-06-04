@@ -10,6 +10,6 @@ export const Media: CollectionConfig = {
     mimeTypes: ['image/*'],
   },
   fields: [
-    { name: 'alt', type: 'text' },
+    { name: 'alt', type: 'text', localized: true },
   ],
 }

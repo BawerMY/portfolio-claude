@@ -11,7 +11,7 @@ export const Projects: CollectionConfig = {
   },
   defaultSort: 'order',
   fields: [
-    { name: 'title', type: 'text', required: true },
+    { name: 'title', type: 'text', required: true, localized: true },
     { name: 'slug', type: 'text', required: true, unique: true },
     { name: 'year', type: 'text', required: true },
     { name: 'order', type: 'number', required: true, defaultValue: 0 },
@@ -19,12 +19,14 @@ export const Projects: CollectionConfig = {
       name: 'stack',
       type: 'array',
       minRows: 1,
+      localized: true,
       fields: [{ name: 'name', type: 'text', required: true }],
     },
     {
       name: 'status',
       type: 'text',
       required: true,
+      localized: true,
       defaultValue: 'Personal',
       admin: {
         description: 'Free text label shown next to project. e.g. Live, Personal, Work, Client',
@@ -34,7 +36,12 @@ export const Projects: CollectionConfig = {
       name: 'preview',
       type: 'group',
       fields: [
-        { name: 'paletteFrom', type: 'text', defaultValue: '#1a3a6e', admin: { description: 'CSS color, e.g. #1a3a6e' } },
+        {
+          name: 'paletteFrom',
+          type: 'text',
+          defaultValue: '#1a3a6e',
+          admin: { description: 'CSS color, e.g. #1a3a6e' },
+        },
         { name: 'paletteTo', type: 'text', defaultValue: '#5a8fd6' },
       ],
     },

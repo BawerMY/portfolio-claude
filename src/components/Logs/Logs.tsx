@@ -21,12 +21,16 @@ export type PlayItem = {
   statusVariant?: 'default' | 'now' | 'warm' | null
 }
 
+type LogHeading = { prefix: string; em: string }
+
 type Props = {
   num?: string
   headlineParts?: HeadlinePart[]
   tagline?: string
   reads: ReadItem[]
   plays: PlayItem[]
+  readingHeading?: LogHeading
+  gamingHeading?: LogHeading
 }
 
 const DEFAULT_HEADLINE: HeadlinePart[] = [
@@ -50,6 +54,8 @@ export function Logs({
   tagline = 'Two parallel streams that keep my head from melting. Updated whenever I finish something or get stuck.',
   reads,
   plays,
+  readingHeading = { prefix: 'Reading ', em: 'log' },
+  gamingHeading = { prefix: 'Gaming ', em: 'log' },
 }: Props) {
   return (
     <section className={sectionStyles.section} id="logs">
@@ -59,7 +65,8 @@ export function Logs({
         <div className={`${styles.grid} reveal`}>
           <div className={styles.col}>
             <h4>
-              Reading <em>log</em>
+              {readingHeading.prefix}
+              <em>{readingHeading.em}</em>
             </h4>
             <ul className={styles.list}>
               {reads.map((r) => (
@@ -81,7 +88,8 @@ export function Logs({
 
           <div className={styles.col}>
             <h4>
-              Gaming <em>log</em>
+              {gamingHeading.prefix}
+              <em>{gamingHeading.em}</em>
             </h4>
             <ul className={styles.list}>
               {plays.map((p) => (

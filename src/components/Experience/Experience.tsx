@@ -17,6 +17,8 @@ type Props = {
   headlineParts?: HeadlinePart[]
   tagline?: string
   items: ExperienceItem[]
+  currentLabel?: string
+  pastLabel?: string
 }
 
 const DEFAULT_HEADLINE: HeadlinePart[] = [
@@ -31,6 +33,8 @@ export function Experience({
   headlineParts = DEFAULT_HEADLINE,
   tagline = 'Roles, projects, and teams that shaped how I work. Listed newest-first.',
   items,
+  currentLabel = 'Current',
+  pastLabel = 'Past',
 }: Props) {
   if (!items.length) return null
 
@@ -69,7 +73,7 @@ export function Experience({
                   item.status === 'current' ? styles.statusCurrent : ''
                 }`}
               >
-                {item.status === 'current' ? 'Current' : 'Past'}
+                {item.status === 'current' ? currentLabel : pastLabel}
               </span>
             </article>
           ))}

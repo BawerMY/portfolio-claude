@@ -11,19 +11,26 @@ export const Plays: CollectionConfig = {
   },
   defaultSort: 'order',
   fields: [
-    { name: 'title', type: 'text', required: true },
-    { name: 'studio', type: 'text', required: true },
-    { name: 'playtime', type: 'text', admin: { description: 'e.g. 84h, finished, slow replay' } },
+    { name: 'title', type: 'text', required: true, localized: true },
+    { name: 'studio', type: 'text', required: true, localized: true },
+    {
+      name: 'playtime',
+      type: 'text',
+      localized: true,
+      admin: { description: 'e.g. 84h, finished, slow replay' },
+    },
     { name: 'order', type: 'number', defaultValue: 0 },
     {
       name: 'coverInitials',
       type: 'text',
+      localized: true,
       admin: { description: 'Two-letter abbreviation, e.g. ER for Elden Ring' },
     },
     {
       name: 'status',
       type: 'text',
       required: true,
+      localized: true,
       defaultValue: '2025',
     },
     {

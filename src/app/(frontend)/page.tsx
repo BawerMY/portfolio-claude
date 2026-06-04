@@ -10,12 +10,17 @@ import { CustomCursor } from '@/components/CustomCursor/CustomCursor'
 import { ScrollReveal } from '@/components/ScrollReveal/ScrollReveal'
 import { KeyboardNav } from '@/components/KeyboardNav/KeyboardNav'
 import { getContent } from '@/lib/getContent'
-import { defaults } from '@/lib/defaults'
+import { getDefaults } from '@/lib/defaults'
+import { getLocale } from '@/lib/i18n'
+import { getLabels } from '@/lib/labels'
 
 export const dynamic = 'force-dynamic'
 
 export default async function HomePage() {
-  const content = await getContent()
+  const locale = await getLocale()
+  const defaults = getDefaults(locale)
+  const labels = getLabels(locale)
+  const content = await getContent(locale)
 
   const settings = { ...defaults.siteSettings, ...(content.siteSettings || {}) }
   const hero = {
@@ -126,7 +131,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <Nav fullName={settings.name} />
+      <Nav fullName={settings.name} locale={locale} labels={labels.nav} />
 
       <main>
         <Hero
@@ -135,27 +140,56 @@ export default async function HomePage() {
           subhead={hero.subhead}
           primaryCta={hero.primaryCta}
           secondaryCta={hero.secondaryCta}
+          scrollLabel={labels.hero.scroll}
         />
 
-        <Projects items={projects} />
+        <Projects
+          num={labels.projects.num}
+          headlineParts={labels.projects.headlineParts}
+          tagline={labels.projects.tagline}
+          items={projects}
+        />
 
-        <Experience items={experience} />
+        <Experience
+          num={labels.experience.num}
+          headlineParts={labels.experience.headlineParts}
+          tagline={labels.experience.tagline}
+          items={experience}
+          currentLabel={labels.experience.current}
+          pastLabel={labels.experience.past}
+        />
 
         <About
-          num={about.kicker || '04 / About'}
+          num={about.kicker || labels.contact.num}
           headlineParts={about.headlineParts || []}
           tagline={about.tagline || undefined}
           paragraphs={about.paragraphs || []}
           currently={about.currently || []}
           toolkit={about.toolkit || []}
+          currentlyLabel={labels.about.currently}
+          nowLabel={labels.about.now}
+          toolkitLabel={labels.about.toolkit}
         />
 
-        <Adventures num="05 / Adventures" items={adventures} />
+        <Adventures
+          num={labels.adventures.num}
+          headlineParts={labels.adventures.headlineParts}
+          tagline={labels.adventures.tagline}
+          items={adventures}
+        />
 
-        <Logs num="06 / Logs" reads={reads} plays={plays} />
+        <Logs
+          num={labels.logs.num}
+          headlineParts={labels.logs.headlineParts}
+          tagline={labels.logs.tagline}
+          reads={reads}
+          plays={plays}
+          readingHeading={labels.logs.readingLog}
+          gamingHeading={labels.logs.gamingLog}
+        />
 
         <Contact
-          kicker="07 / Contact"
+          kicker={labels.contact.num}
           headlineParts={contact.headlineParts || []}
           socials={contact.socials || []}
           footerLeft={settings.footerLeft || undefined}

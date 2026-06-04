@@ -17,6 +17,7 @@ type Props = {
   subhead?: string | null
   primaryCta?: Cta | null
   secondaryCta?: Cta | null
+  scrollLabel?: string
 }
 
 function renderTitle(parts: TitlePart[]) {
@@ -47,7 +48,14 @@ function renderTitle(parts: TitlePart[]) {
   return out
 }
 
-export function Hero({ meta, titleParts, subhead, primaryCta, secondaryCta }: Props) {
+export function Hero({
+  meta,
+  titleParts,
+  subhead,
+  primaryCta,
+  secondaryCta,
+  scrollLabel = 'Scroll',
+}: Props) {
   return (
     <section className={styles.hero} id="home">
       <HeroCanvas className={styles.canvas} />
@@ -80,7 +88,7 @@ export function Hero({ meta, titleParts, subhead, primaryCta, secondaryCta }: Pr
         </div>
       </div>
       <div className={styles.scroll}>
-        <span>Scroll</span>
+        <span>{scrollLabel}</span>
         <div className={styles.scrollLine} />
       </div>
     </section>

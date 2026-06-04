@@ -60,6 +60,11 @@
   display: inline;
 }
 
+.right {
+  display: flex;
+  align-items: center;
+}
+
 .list {
   list-style: none;
   display: flex;

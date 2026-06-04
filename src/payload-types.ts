@@ -96,7 +96,7 @@ export interface Config {
   db: {
     defaultIDType: string;
   };
-  fallbackLocale: null;
+  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('en' | 'it') | ('en' | 'it')[];
   globals: {
     'site-settings': SiteSetting;
     hero: Hero;
@@ -109,7 +109,7 @@ export interface Config {
     about: AboutSelect<false> | AboutSelect<true>;
     contact: ContactSelect<false> | ContactSelect<true>;
   };
-  locale: null;
+  locale: 'en' | 'it';
   widgets: {
     collections: CollectionsWidget;
   };

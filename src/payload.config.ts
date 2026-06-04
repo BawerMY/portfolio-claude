@@ -30,6 +30,14 @@ export default buildConfig({
   },
   collections: [Users, Media, Projects, Experience, Adventures, Reads, Plays],
   globals: [SiteSettings, Hero, About, Contact],
+  localization: {
+    locales: [
+      { code: 'en', label: 'English' },
+      { code: 'it', label: 'Italiano' },
+    ],
+    defaultLocale: 'en',
+    fallback: true,
+  },
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
